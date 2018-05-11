@@ -1,0 +1,15 @@
+{
+  "name": "phonographe",
+  "description": "AngularJS app to manage music, init from Angular-Seed project",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.0",
+    "angular-route": "~1.6.0",
+    "angular-loader": "~1.6.0",
+    "angular-mocks": "~1.6.0",
+    "html5-boilerplate": "^6.1.0"
+  }
+}
