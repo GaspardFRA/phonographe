@@ -3,25 +3,13 @@
 </md-toolbar>
 
 
-<div flex>
-    <!-- Container #3 -->
-    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
-        Sidenav
-    </md-sidenav>
+<div flex layout="column">
     <!-- Container #4 -->
     <md-content flex id="content">
-        <ul>
-            <li>
-                <a href="#!/view1">view1</a>
-            </li>
-            <li>
-                <a href="#!/view2">view2</a>
-            </li>
-        </ul>
+        <md-button class="md-button" href="#!/view1">view1</md-button>
+        <md-button class="md-button" href="#!/view2">view2</md-button>
     </md-content>
-
-</div>
-
-<div>Phonographe: v
-    <span app-version></span>
+    <div>Phonographe: v
+        <span app-version></span>
+    </div>
 </div>
