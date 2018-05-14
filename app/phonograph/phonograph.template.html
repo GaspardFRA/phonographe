@@ -1,0 +1,9 @@
+<h2>Phonograph {{$ctrl.phonograph.name}}</h2>
+<p>{{$ctrl.phonograph.id}}</p>
+<md-list>
+    <md-list-item class="md-2-line" ng-repeat="song in $ctrl.phonograph.songs">
+        <div class="md-list-item-text">
+            <p>{{song.name}}</p>
+        </div>
+    </md-list-item>
+</md-list>
