@@ -39,4 +39,15 @@ describe('my app', function() {
 
   });
 
+  describe('phonograph', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/someId');
+    });
+
+    it('should render Phonograph page when user navigates to /phonographId', function() {
+      expect(element(by.css('phonograph')).isPresent()).toBe(true);
+    });
+
+  });
 });
