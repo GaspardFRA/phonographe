@@ -4,9 +4,10 @@
 angular.module('phonographeApp', [
   'ngRoute',
   'phonographeApp.view1',
-  'phonographeApp.createPhonograph',
+  'createPhonograph',
+  'joinPhonograph',
   'phonographeApp.view2',
-  'phonographeApp.home',
+  'home',
   'phonographeApp.version',
   'ngMaterial',
   'ngMessages'

@@ -13,7 +13,10 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-material/angular-material-mocks.js',
       'components/**/*.js',
-      'view*/**/*.js'
+      'view*/**/*.js',
+      '**/*.component.js',
+      '**/*.spec.js'
+
     ],
 
     autoWatch: true,

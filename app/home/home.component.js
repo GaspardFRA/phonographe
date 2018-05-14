@@ -1,8 +1,8 @@
 'use strict';
-
 angular.
-    module('phonographeApp.home', ['ngRoute']).
+    module('home', ['ngRoute']).
     component('home', {
         templateUrl: 'home/home.template.html',
-        controller: ''
+        controller: function HomeController() {
+        }
     });

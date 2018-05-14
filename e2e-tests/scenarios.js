@@ -10,33 +10,33 @@ describe('my app', function() {
     expect(browser.getCurrentUrl()).toMatch("/home");
   });
 
+  it('should render home page when user navigates to /home', function() {
+    browser.get('index.html#!/home');
+    expect(element(by.css('home')).isPresent()).toBe(true);
+  });
 
-  describe('view1', function() {
+  describe('createPhonograph', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view1');
+      browser.get('index.html#!/create');
     });
 
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+    it('should render createPhonograph page when user navigates to /create', function() {
+      expect(element(by.css('create-phonograph')).isPresent()).toBe(true);
     });
 
   });
 
-
-  describe('view2', function() {
+  describe('joinPhonograph', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view2');
+      browser.get('index.html#!/join');
     });
 
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+    it('should render joinPhonograph page when user navigates to /join', function() {
+      expect(element(by.css('join-phonograph')).isPresent()).toBe(true);
     });
 
   });
+
 });
