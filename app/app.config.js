@@ -8,6 +8,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   when('/home', {
     template: '<home></home>'
   }).
+  when('/create', {
+    template: '<create-phonograph></create-phonograph>'
+  }).
   when('/view1', {
     template: '<view1></view1>'
   }).

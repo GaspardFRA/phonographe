@@ -4,6 +4,7 @@
 angular.module('phonographeApp', [
   'ngRoute',
   'phonographeApp.view1',
+  'phonographeApp.createPhonograph',
   'phonographeApp.view2',
   'phonographeApp.home',
   'phonographeApp.version',
