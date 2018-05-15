@@ -10,6 +10,7 @@
     "angular-route": "~1.6.0",
     "angular-loader": "~1.6.0",
     "angular-mocks": "~1.6.0",
-    "angular-material": "^1.1.9"
+    "angular-material": "^1.1.9",
+    "angular-material-data-table": "^0.10.10"
   }
 }

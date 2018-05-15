@@ -1,9 +1,21 @@
-<h2>Phonograph {{$ctrl.phonograph.name}}</h2>
-<p>{{$ctrl.phonograph.id}}</p>
-<md-list>
-    <md-list-item class="md-2-line" ng-repeat="song in $ctrl.phonograph.songs">
-        <div class="md-list-item-text">
-            <p>{{song.name}}</p>
-        </div>
-    </md-list-item>
-</md-list>
+<div layout="column" layout-align="space-around center" id="content">
+    <h2>{{$ctrl.phonograph.name}}</h2>
+    <p>phonograph{{$ctrl.phonograph.id}}</p>
+    <md-table-container>
+        <table md-table>
+            <thead md-head md-order="$ctrl.order">
+                <tr md-row>
+                    <th md-column md-order-by="name"><span>Title</span></th>
+                    <th md-column md-order-by="author"><span>Author</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="song in $ctrl.phonograph.songs | orderBy: $ctrl.order">
+                    <td md-cell>{{song.name}}</td>
+                    <td md-cell>{{song.author}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+
+</div>
