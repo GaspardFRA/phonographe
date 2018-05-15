@@ -12,5 +12,8 @@
     "angular-mocks": "~1.6.0",
     "angular-material": "^1.1.9",
     "angular-material-data-table": "^0.10.10"
+  },
+  "resolutions": {
+    "angular": "~1.6.0"
   }
 }

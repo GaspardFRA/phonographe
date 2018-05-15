@@ -1,4 +1,14 @@
 <div layout layout-align="space-around center" id="content">
-    <input id="party_id"></input>
-    <md-button class="md-primary md-raised" id="button_join">Let's join</md-button>
+    <form name="joinForm" ng-submit="$ctrl.submit()">
+        <div layout="row">
+            <md-input-container>
+                <label class="md-required" for="phonograph_id">Phonograph Id</label>
+                <input id="phonograph_id" name="phonograph_name" ng-model="$ctrl.phonographId" required></input>
+                <div ng-messages="joinForm.phonograph_name.$error">
+                    <div ng-message="required">Id required</div>
+                </div>
+                <md-button class="md-primary md-raised" id="submit" type="submit">Let's join</md-button>
+            </md-input-container>
+        </div>
+    </form>
 </div>
