@@ -13,15 +13,20 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
-  <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body ng-cloak>
-
-  <md-toolbar layout="row" class="md-toolbar-tools">
-    <h1>Toolbar of material</h1>
+  <md-toolbar layout>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Home" href="#!/home">
+        <md-icon class="material-icons">home</md-icon>
+      </md-button>
+      <h1 flex md-truncate>Phonograph App</h1>
+    </div>
   </md-toolbar>
-  <md-content  layout="column">
+  <md-content layout="column">
     <div ng-view class="view-frame"></div>
   </md-content>
   <!--[if lt IE 7]>
