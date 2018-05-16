@@ -1,27 +1,23 @@
 'use strict';
 
 angular
-    .module('joinPhonograph', ['ngRoute'])
+    .module('joinPhonograph', ['ngRoute', 'phonographService'])
     .component('joinPhonograph', {
         templateUrl: 'join-phonograph/join-phonograph.template.html',
-        controller: function JoinPhonographController($location) {
-            var self = this;
-            self.serverError = '';
-            self.phonographId = '';
-            self.phonographs = [
-                {
-                    id: '123',
-                    name: 'WOLOLO'
-                }
-            ];
-            self.submit = function () {
-                // TBD : Mock services here, change validation
-                if (self.phonographs.find(item => item.id === self.phonographId) === undefined) {
-                    self.serverError = 'notfound';
-                }
-                else {
-                    $location.path('/'+self.phonographId)
-                }
-            };
-        }
+        controller: ['$location', 'PhonographService',
+            function JoinPhonographController($location, PhonographService) {
+                var self = this;
+
+                self.phonographId = '';
+
+                self.submit = function () {
+                    if (PhonographService.get(self.phonographId) === undefined) {
+                        // TODO : Send Error message, ngmessage
+                    }
+                    else {
+                        $location.path('/' + self.phonographId)
+                    }
+                };
+            }
+        ]
     });

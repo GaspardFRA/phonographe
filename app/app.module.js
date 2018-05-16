@@ -10,5 +10,6 @@ angular.module('phonographeApp', [
   'phonographeApp.version',
   'ngMaterial',
   'ngMessages',
-  'md.data.table'
+  'md.data.table',
+  'phonographService'
 ]);
