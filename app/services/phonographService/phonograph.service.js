@@ -2,7 +2,7 @@
 
 angular.
   module('phonographService', []).
-  factory('PhonographService', function () {
+  factory('PhonographService', ['$http', function ($http) {
 
     var phonographFactory = {};
 
@@ -27,10 +27,12 @@ angular.
       }
     ];
 
-    phonographFactory.get = () => phonographFactory.phonographs;
+    phonographFactory.query = function () {
+      return $http.get('/phonographs');
+    };
 
     phonographFactory.get = function (id) {
-      return phonographFactory.phonographs.find(item => item.id === id);
+      return $http.get('/phonographs/' + id);
     };
 
     phonographFactory.toast = function () {
@@ -38,6 +40,5 @@ angular.
     }
 
     return phonographFactory;
-  }
-  );
+  }]);
 

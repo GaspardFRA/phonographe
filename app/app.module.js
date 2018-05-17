@@ -10,6 +10,7 @@ angular.module('phonographeApp', [
   'phonographeApp.version',
   'ngMaterial',
   'ngMessages',
+  'ngMockE2E',
   'md.data.table',
   'phonographService'
 ]);

@@ -4,15 +4,16 @@ angular.
     module('phonograph', ['ngRoute', 'phonographService']).
     component('phonograph', {
         templateUrl: 'phonograph/phonograph.template.html',
-        controller: ['$location', '$routeParams', 'PhonographService',
-            function PhonographController($location, $routeParams, PhonographService) {
+        controller: ['$location', '$routeParams', '$log', 'PhonographService',
+            function PhonographController($location, $routeParams, $log, PhonographService) {
                 var self = this;
                 self.order = 'name';
-                self.phonograph = PhonographService.get($routeParams.phonographId);
-                // In case there is no corresponding Phonograph, redirect to join
-                if (self.phonograph === undefined) {
-                    $location.path('/join')
-                }
+                PhonographService.get($routeParams.phonographId)
+                    .then(response => {
+                        self.phonograph = response.data
+                        $log.debug("phonographComponent::getPhonograph" + $routeParams.phonographId + ", return: " + response.data);
+                    });
+
             }
         ]
     });

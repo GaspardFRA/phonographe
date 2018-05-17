@@ -14,7 +14,7 @@ angular.module('phonographeApp').
       when('/join', {
         template: '<join-phonograph></join-phonograph>'
       }).
-      when('/:phonographId', {
+      when('/phonographs/:phonographId', {
         template: '<phonograph></phonograph>'
       }).
       otherwise('/home');
