@@ -4,8 +4,8 @@ angular
     .module('joinPhonograph', ['ngRoute', 'phonographService'])
     .component('joinPhonograph', {
         templateUrl: 'join-phonograph/join-phonograph.template.html',
-        controller: ['$location', '$log', 'PhonographService',
-            function JoinPhonographController($location, $log, PhonographService) {
+        controller: ['$location', '$log', '$mdToast', 'PhonographService',
+            function JoinPhonographController($location, $log, $mdToast, PhonographService) {
                 var self = this;
 
                 self.phonographId = '';
@@ -26,9 +26,19 @@ angular
                             $location.path('/phonographs/' + self.phonographId);
                         })
                         .catch(response => {
-                            $log.debug('joinComponent::getPhonograph:Error'+response.status+':'+response.data);
-                            // TODO : Throw message not found if 404 
+                            $log.debug('joinComponent::getPhonograph:Error' + response.status + ':' + response.data);
+                            self.showErrorMessage("Phonograph not found");
                         });
+                };
+
+                self.showErrorMessage = function (message) {
+                    $log.debug('joinComponent::showErrorMessage(' + message + ' )');
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent(message)
+                            .position('bottom')
+                            .hideDelay(2000)
+                    );
                 };
             }
         ]
