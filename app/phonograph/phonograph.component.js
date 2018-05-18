@@ -12,6 +12,9 @@ angular.
                     .then(response => {
                         self.phonograph = response.data
                         $log.debug("phonographComponent::getPhonograph" + $routeParams.phonographId + ", return: " + response.data);
+                    })
+                    .catch(response => {
+                        $location.path('/join')
                     });
 
             }

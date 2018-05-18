@@ -24,6 +24,10 @@ angular
                         .then(response => {
                             $log.debug('joinComponent::getPhonograph:' + self.phonographId);
                             $location.path('/phonographs/' + self.phonographId);
+                        })
+                        .catch(response => {
+                            $log.debug('joinComponent::getPhonograph:Error'+response.status+':'+response.data);
+                            // TODO : Throw message not found if 404 
                         });
                 };
             }

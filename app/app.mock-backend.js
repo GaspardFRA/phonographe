@@ -3,7 +3,7 @@
 angular.
     module('phonographeApp').
     run(['$httpBackend', '$log', '$filter', function ($httpBackend, $log, $filter) {
-        var self= this;
+        var self = this;
         var phonographs = [
             {
                 id: '123',
@@ -32,11 +32,11 @@ angular.
         $httpBackend.whenGET(/\/phonographs\/\d+/).respond(function (method, url, data) {
             var phonographId = url.split('/')[2];
             $log.debug("MockBackend::getPhonographId:" + phonographId);
-            var phonograph = $filter('filter')(phonographs, {id: phonographId}, true)[0];//phonographs.find(function(item) { item.id === phonographId });
-            
+            var phonograph = $filter('filter')(phonographs, { id: phonographId }, true)[0];//phonographs.find(function(item) { item.id === phonographId });
+
             // Return empty if no corresponding phonograph
             if (phonograph === undefined) {
-                phonograph = {};
+                return [404, {}, {}];
             }
             return [200, phonograph, {}];
         });
