@@ -5,7 +5,7 @@ describe('phonographeApp.version module', function() {
 
   describe('version service', function() {
     it('should return current version', inject(function(version) {
-      expect(version).toEqual('0.1.0');
+      expect(version).toEqual('0.2.0');
     }));
   });
 });

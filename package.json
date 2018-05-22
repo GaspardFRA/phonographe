@@ -1,7 +1,7 @@
 {
     "name": "phonographe",
     "private": true,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "AngularJS app to manage music, init from Angular-Seed project",
     "repository": "",
     "license": "MIT",
