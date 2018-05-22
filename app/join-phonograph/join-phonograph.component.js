@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('joinPhonograph', ['ngRoute', 'phonographService'])
+    .module('joinPhonograph', ['ngRoute', 'phonographService', 'ngMaterial'])
     .component('joinPhonograph', {
         templateUrl: 'join-phonograph/join-phonograph.template.html',
         controller: ['$location', '$log', '$mdToast', 'PhonographService',
