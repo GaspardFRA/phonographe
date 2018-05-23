@@ -10,6 +10,10 @@ angular.
         return $http.get('/phonographs');
       };
 
+      phonographFactory.post = function (name) {
+        return $http.post('/phonographs', name);
+      };
+
       phonographFactory.get = function (id) {
         return $http.get('/phonographs/' + id);
       };
