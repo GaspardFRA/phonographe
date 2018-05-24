@@ -14,8 +14,7 @@ angular.
                     PhonographService.post(self.phonographName)
                         .then(response => {
                             $log.debug('createComponent::PostPhonograph:' + self.phonographName);
-                            // TODO: Redirect on new created phonograph
-                            //$location.path('/phonographs/' + response.data.id);
+                            $location.path('/phonographs/' + response.data.id);
                         })
                         .catch(response => {
                             $log.debug('createComponent::PostPhonograph:Error' + response.status + ':' + response.data);

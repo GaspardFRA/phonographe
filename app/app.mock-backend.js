@@ -31,7 +31,7 @@ angular.
         });
 
         $httpBackend.whenGET(/\/phonographs\/\d+/).respond(function (method, url, data) {
-            var phonographId = url.split('/')[2];
+            var phonographId = parseInt(url.split('/')[2]);
             $log.debug("mockBackend::getPhonographId:" + phonographId);
             var phonograph = $filter('filter')(phonographs, { id: phonographId }, true)[0];
 
