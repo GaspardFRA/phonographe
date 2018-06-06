@@ -1,21 +1,34 @@
-<div layout="column" layout-align="space-around center" id="content">
-    <h2>{{$ctrl.phonograph.name}}</h2>
-    <p>phonograph{{$ctrl.phonograph.id}}</p>
-    <md-table-container>
-        <table md-table>
-            <thead md-head md-order="$ctrl.order">
-                <tr md-row>
-                    <th md-column md-order-by="name"><span>Title</span></th>
-                    <th md-column md-order-by="author"><span>Author</span></th>
-                </tr>
-            </thead>
-            <tbody md-body>
-                <tr md-row ng-repeat="song in $ctrl.phonograph.songs | orderBy: $ctrl.order">
-                    <td md-cell>{{song.name}}</td>
-                    <td md-cell>{{song.author}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </md-table-container>
+<div layout="row" layout-fill>
+    <md-sidenav class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 350px')">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+        <md-content role="navigation" layout="column">
+            <md-button class="md-primary">Queue</md-button>
+            <md-button class="md-primary">Settings</md-button>
+            <md-button class="md-primary">Output Devices</md-button>
+            <md-button class="md-primary">Exit</md-button>
+        </md-content>
+    </md-sidenav>
 
+    <div layout="column" layout-align="start center" id="content">
+        <h2>{{$ctrl.phonograph.name}}</h2>
+        <p>phonograph{{$ctrl.phonograph.id}}</p>
+        <md-table-container>
+            <table md-table>
+                <thead md-head md-order="$ctrl.order">
+                    <tr md-row>
+                        <th md-column md-order-by="name"><span>Title</span></th>
+                        <th md-column md-order-by="author"><span>Author</span></th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row ng-repeat="song in $ctrl.phonograph.songs | orderBy: $ctrl.order">
+                        <td md-cell>{{song.name}}</td>
+                        <td md-cell>{{song.author}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </div>
 </div>

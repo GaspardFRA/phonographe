@@ -1,11 +1,11 @@
 'use strict';
 
 angular.
-    module('phonograph', ['ngRoute', 'phonographService']).
+    module('phonograph', ['ngRoute', 'phonographService', 'ngMaterial']).
     component('phonograph', {
         templateUrl: 'phonograph/phonograph.template.html',
-        controller: ['$location', '$routeParams', '$log', 'PhonographService',
-            function PhonographController($location, $routeParams, $log, PhonographService) {
+        controller: ['$location', '$routeParams', '$log','$mdSidenav', 'PhonographService', 
+            function PhonographController($location, $routeParams, $log, $mdSidenav, PhonographService) {
                 var self = this;
                 self.order = 'name';
                 PhonographService.get($routeParams.phonographId)
@@ -16,7 +16,11 @@ angular.
                     .catch(response => {
                         $location.path('/join')
                     });
-
+                $mdSidenav('left')
+                    .toggle()
+                    .then(function () {
+                        $log.debug('toggled');
+                    });
             }
         ]
     });

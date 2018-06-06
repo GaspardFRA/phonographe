@@ -17,18 +17,23 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body ng-cloak>
-  <md-toolbar layout>
-    <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Home" href="#!/home">
-        <md-icon class="material-icons">home</md-icon>
-      </md-button>
-      <h1 flex md-truncate>Phonograph App</h1>
+<body ng-cloak layout>
+  <div role="main" layout="column" flex>
+    <md-toolbar layout>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" href="#!/home">
+          <md-icon class="material-icons">home</md-icon>
+        </md-button>
+        <h1 flex md-truncate>Phonograph App</h1>
+      </div>
+    </md-toolbar>
+    <md-content layout="column" flex>
+      <div ng-view class="view-frame" flex></div>
+    </md-content>
+    <div layout-align="center end" >Phonographe: v
+        <span app-version></span>
     </div>
-  </md-toolbar>
-  <md-content layout="column">
-    <div ng-view class="view-frame"></div>
-  </md-content>
+  </div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
